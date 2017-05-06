@@ -1,0 +1,217 @@
+<?php
+  session_start();
+  if(isset($_SESSION['user'])) {
+    echo "Existe una sesion abierta : ".$_SESSION['user'];
+  }
+  else {
+    echo "NO EXISTE sesion abierta";
+    header( "Location: index.php" ) ;
+  }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="iconos.css">
+<link rel="stylesheet" href="estilos.css">
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+
+</head>
+<body>
+	
+<header>
+	<div class="menu_bar">
+	<a href="" class="bt-menu"><span class="icon-menu"></span></a>
+	</div>
+		
+		<nav>
+			<ul>
+				<li><a class="span_menu"><span class="icon-menu"></span></a></li>
+				<li class="li-m"><a href="subir.php"><span class="icon-box-remove"></span>Subir</a></li>
+				<li class="li-m"><a href="ver.php"><span class="icon-list-numbered"></span>Ver</a></li>
+				<li class="li-m"><a href="estadisticas.php"><span class="icon-pie-chart"></span>Estadísticas</a></li>
+				<li class="li-m"><a href="ajustes.php"><span class="icon-cog"></span>Ajustes</a></li>
+				<li class="li-m"><a href="php/cerrar_sesion.php"><span class="icon-exit"></span>Cerrar Sesión</a></li>
+			</ul>
+		</nav>
+</header>
+
+<section class="main_section">
+
+	<h1 class="main_titulo">Ajustes</h1>
+
+	<div class="type-content">
+		<h1 class="main_titulo">Subir Reactivo</h1>
+		<div class="ajuste_perfil">
+			<input type="radio" class="tipo_reactivo" name="tipo_reactivo" id="tipo01" checked></input>
+			<label for="tipo01">Editar Perfil</label>
+		</div>
+
+		<div class="ajuste_perfil">
+			<input type="radio" class="tipo_reactivo" name="tipo_reactivo" id="tipo02"></input>
+			<label for="tipo02">Cambiar Contraseña</label>
+		</div>
+
+	</div>
+
+<!-- DATOS DEL ADMINISTRADOR-->
+<form class="form_editar" action="php/actualizar_datos.php" id="form_perfil01" method="post">
+	<div class="form_labels">
+		<label for="">Nombre</label><br><br>
+		<label for="">Apellidos</label><br><br>
+		<label for="">Contraseña</label><br><br>
+		<label for="">Correo</label><br><br>
+	</div>
+	<div class="form_labels">
+                <?php
+                    //CONSULTA DE TODAS LAS CUENTAS EXISTENTES:
+                    include 'php/mysql.php';
+                    $query = "SELECT * FROM administrador;";
+                    $result = $mysql_con->query($query);
+                    $fila = $result->fetch_assoc();
+
+                    echo 
+                    '
+					<input type="text" value="'.$fila['nombre_adm'].'" name="nombre" disabled><br><br>	
+					<input type="text" value="'.$fila['apellidos_adm'].'" name="apellidos" disabled><br><br>	
+				    <input type="password" value="MorenoGaspar" disabled><br><br>	
+				    <input type="text" value="'.$fila['correo_adm'].'" name="email" disabled><br><br>
+                    ';
+                    
+
+
+
+                    //Cerramos la base de datos.
+                    $mysql_con->close();
+                ?>
+
+
+	</div>
+	<a id="btn_editar" class="btn btn-success btn-warning btn_editar">Editar</a>
+	<input id="btn-guardar" type="submit" class="btn btn-success btn_editar " value="Guardar" name="btn-perfil">
+
+</form>
+
+<!-- DATOS CONTRASEÑAS ADMINSTRADOR -->
+<form class="form_editar" action="php/actualizar_datos.php" id="form_perfil02" method="post">
+
+	<div class="form_labels">
+		<label for="">Escriba su contraseña</label><br><br>
+		<label for="">Nueva Contraseña</label><br><br>
+		<label for="">Confirma Nueva Contraseña</label><br><br>
+	</div>
+	<div class="form_labels">
+		<input type="password" name="password" name="pass" required><br><br>
+		<input type="password" name="new_pass01" name="nuevopass" required><br><br>
+		<input type="password" name="new_pass02" name="confirmapass" required><br><br>
+	</div>
+	<input type="submit" class="btn btn-success" value="Cambiar Contraseña" name="btn-pass">
+
+</form>
+</section>
+
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+
+
+$('.boton_redondo').hide();
+
+var cont = 0;
+
+$('.span_menu').click(function() {
+ 
+if (cont%2==0) {
+
+	$('nav').animate({
+ 	left: "-20%"
+ });
+	$('.li-m').hide();
+	$('.main_section').animate({
+		width: "90%"
+	});
+}
+else{
+	$('nav').animate({
+ 	left: "0%"
+ });
+	$('.li-m').show();
+	$('.main_section').animate({
+		width: "70%"
+	});
+
+}
+ 
+
+
+cont++;
+
+});
+
+});
+
+</script>
+<script type="text/javascript">
+	
+$(function(){
+
+	$('#btn_editar').click(function(){
+		$('.form_editar input[type="text"]').attr('disabled',false);
+		$('.form_editar input[type="text"]').attr('disabled',false);	
+
+	});
+
+});
+
+</script>
+
+<script>
+	
+$(function(){
+
+	$('.form_editar').hide();
+	$('#form_perfil01').show();
+	$('#tipo01').click(function(){
+		$('.form_editar').hide();
+		$('#form_perfil01').show();
+
+	});
+	$('#tipo02').click(function(){
+		$('.form_editar').hide();
+		$('#form_perfil02').show();
+
+	});
+
+});
+
+</script>
+
+<!-- SCRIPT BOTONES EDITAR-ENVIAR-->
+<script>
+
+$(function(){
+	$('.btn_editar').hide();
+	$('#btn_editar').show();
+
+	$('#btn_editar').click(function(){
+		$('#btn-guardar').show();
+		$('#btn_editar').css("visibility","hidden");
+	});
+	
+});
+	
+</script>
+<!-- FIN SCRIPT BOTONES EDITAR-ENVIAR-->
+
+  
+</body>
+</html>
+

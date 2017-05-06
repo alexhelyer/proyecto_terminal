@@ -1,0 +1,196 @@
+*{
+
+	margin:0;
+	padding:0;
+}
+
+body{
+	background: #FFFFFF;
+}
+
+header{
+	width: 100%;
+}
+
+header nav{
+
+	width: 30%;
+	max-width: 1000px;
+	height: 100%;
+	margin: 0;
+	background: #73C9DC;
+	position: fixed;
+	/*left: -30%;*/
+
+}
+
+header nav ul{
+
+	overflow: hidden;
+	list-style: none;
+}
+.menu_bar{
+	display: none;
+}
+
+header nav ul li{
+	width: 100%;
+	display: block;
+	border-bottom: 1px solid rgba(255,255,255, .3);
+}
+
+.span_menu{
+	width: 100%;
+	text-align: right;
+}
+
+header nav ul li a{
+
+	color: #FFFFFF;
+	padding: 20px;
+	display: block;
+	text-decoration: none;
+
+
+}
+
+header nav ul li a:hover{
+
+	color: #FFFFFF;
+	background:#2E95B3; 
+}
+
+header nav ul li a:focus{
+
+	color: #FFFFFF;
+	
+}
+
+header nav ul li span{
+
+	margin-right: 7px;
+	
+}
+
+
+.boton_redondo{
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  background: #000000
+
+}
+
+.icon_menu{
+
+
+
+}
+
+
+.main_section{
+
+width: 70%;
+display: block;
+background: white;
+overflow: hidden;
+float: right;
+
+}
+	
+
+	.type-content {
+		width: 100%;
+		display: block;
+		overflow: hidden;
+	}
+	.main_titulo {
+		width: 100%;
+		text-align: center;
+	}
+	.type-content div {
+		display: block;
+		width: 33.33%;
+		float: left;
+		margin: 0px;
+	}
+	.type-content .ajuste_perfil {
+		width: 50%;
+	}
+	.type-content div label {
+		box-sizing: border-box;
+		width: 100%;
+		font-size: 1em;
+		text-align: center;
+		color: black;
+		padding: 30px 0px;
+		background-color: white;
+		margin: 0px;
+	}
+	.type-content div label:hover {
+		border-bottom: 4px solid #DEDEDE;
+	}
+	
+	.type-content div input {
+		visibility: hidden;
+	}
+
+	.type-content div input[type="radio"]:checked + label {
+		border-bottom: 4px solid #DEDEDE;
+
+	}
+	.form-content {
+		box-sizing: border-box;
+		width: 100%;
+		display: block;
+		overflow: hidden;
+		background-color: white;
+	}
+	
+	.form_type{
+		box-sizing: border-box;
+		padding-left: 30%;
+		padding-top: 5%;
+		width: 100%;
+		padding-bottom: 32%;
+		background-color: white;
+	}
+
+	.form_type input[type="text"]{
+		width: 210px;
+	}
+
+	.guardar_boton{
+		margin-left: 150px;
+	}
+
+	/*Estadísticas*/
+	.fecha{
+		margin-left: 25%;
+	}
+
+	section input[type="submit"]{
+		display: block;
+    	margin: 0 auto;
+	}
+
+	.form_editar {
+		padding: 5% 10%;
+	}
+
+	.form_labels {
+		box-sizing: border-box;
+		display: block;
+		width: 50%;
+		float: left;
+	}
+	.form_labels:nth-child(1) {
+		padding-left: 100px;
+	}
+
+	.btn_editar{
+		display: inline-block;
+		width: 20%;
+		margin: 0% 40%;
+		margin-bottom: 2% !important;
+	}
