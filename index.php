@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   session_start();
   if(isset($_SESSION['user'])) {
     echo "Existe una sesion abierta : ".$_SESSION['user'];
@@ -20,7 +20,7 @@
 	<script src="js/jquery.min.js"></script>
 </head>
 <body>
-	<header class="cabecera">
+<!--	<header class="cabecera">
 
 		<img src="images/gobmxlogo.svg" width=75 height=23 >
 		<nav id="menu">
@@ -29,7 +29,7 @@
             </ul>
         </nav>
 
-	</header>
+	</header> -->
 	<section class="cuerpo">
 		<center>
 		<h1>Televisión Educativa</h1>
