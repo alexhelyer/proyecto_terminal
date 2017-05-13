@@ -68,8 +68,8 @@
     
 <form action="php/subir_reactivo.php" method="post" id="form_1" class="form_type">
     
-    <label>Seleccione el tema1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'slct2')">
+    <label>Seleccione el tema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'subtema')">
       <option value="aritmetica">Aritmética</option>
       <option value="algebra">Álgebra</option>
       <option value="geometria">Geometría</option>
@@ -87,7 +87,7 @@
     </select><br><br>
   
     <label>Seleccione el grado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-primary" id="slct1" name="grado" onchange="populate(this.id,'slct2')">
+    <select class="selectpicker" data-style="btn-primary" name="grado">
       <option value="1">Primer Grado</option>
       <option value="2">Segundo Grado</option>
       <option value="3">Tercer Grado</option>
@@ -95,7 +95,7 @@
 
     
     <label>Seleccione el Nivel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-info" id="slct1" name="nivel" onchange="populate(this.id,'slct2')">
+    <select class="selectpicker" data-style="btn-info" name="nivel">
       <option value="1"> Nivel I</option>
       <option value="2"> Nivel II</option>
       <option value="3"> Nivel III</option>
@@ -119,8 +119,8 @@
   <!-- FORM 2-->
 <form action="php/subir_reactivo.php" method="post" id="form_2" class="form_type">
     
-    <label>Seleccione el tema1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'slct2')">
+    <label>Seleccione el tema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <select class="selectpicker" data-style="btn-primary" id="slct02" name="tema" onchange="populate(this.id,'subtema02')">
       <option value="aritmetica">Aritmética</option>
       <option value="algebra">Álgebra</option>
       <option value="geometria">Geometría</option>
@@ -130,7 +130,7 @@
 
     <br><br>
     <label>Seleccione el subtema&nbsp;</label>
-    <select id="subtema" name="subtema" class="selectpicker re_size" data-style="btn-info" style="width:auto;">
+    <select id="subtema02" name="subtema" class="selectpicker re_size" data-style="btn-info" style="width:auto;">
       <option selected value="naturales">Naturales</option>
       <option selected value="enteros">Enteros</option>
       <option selected value="fraccionarios">Fraccionarios</option>
@@ -138,7 +138,7 @@
     </select><br><br>
   
     <label>Seleccione el grado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-primary" id="slct1" name="grado" onchange="populate(this.id,'slct2')">
+    <select class="selectpicker" data-style="btn-primary" name="grado">
       <option value="1">Primer Grado</option>
       <option value="2">Segundo Grado</option>
       <option value="3">Tercer Grado</option>
@@ -146,7 +146,7 @@
 
     
     <label>Seleccione el Nivel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-info" id="slct1" name="nivel" onchange="populate(this.id,'slct2')">
+    <select class="selectpicker" data-style="btn-info" name="nivel">
       <option value="1"> Nivel I</option>
       <option value="2"> Nivel II</option>
       <option value="3"> Nivel III</option>
@@ -172,8 +172,8 @@
 <!-- FORM 3-->
 <form action="php/subir_reactivo.php" method="post" id="form_3" class="form_type">
     
-    <label>Seleccione el tema1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'slct2')">
+    <label>Seleccione el tema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <select class="selectpicker" data-style="btn-primary" id="slct03" name="tema" onchange="populate(this.id,'subtema03')">
       <option value="aritmetica">Aritmética</option>
       <option value="algebra">Álgebra</option>
       <option value="geometria">Geometría</option>
@@ -183,7 +183,7 @@
 
     <br><br>
     <label>Seleccione el subtema&nbsp;</label>
-    <select id="subtema" name="subtema" class="selectpicker re_size" data-style="btn-info" style="width:auto;">
+    <select id="subtema03" name="subtema" class="selectpicker re_size" data-style="btn-info" style="width:auto;">
       <option selected value="naturales">Naturales</option>
       <option selected value="enteros">Enteros</option>
       <option selected value="fraccionarios">Fraccionarios</option>
@@ -191,7 +191,7 @@
     </select><br><br>
   
     <label>Seleccione el grado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-primary" id="slct1" name="grado" onchange="populate(this.id,'slct2')">
+    <select class="selectpicker" data-style="btn-primary" name="grado">
       <option value="1">Primer Grado</option>
       <option value="2">Segundo Grado</option>
       <option value="3">Tercer Grado</option>
@@ -199,7 +199,7 @@
 
     
     <label>Seleccione el Nivel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select class="selectpicker" data-style="btn-info" id="slct1" name="nivel" onchange="populate(this.id,'slct2')">
+    <select class="selectpicker" data-style="btn-info" name="nivel">
       <option value="1"> Nivel I</option>
       <option value="2"> Nivel II</option>
       <option value="3"> Nivel III</option>

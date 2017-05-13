@@ -23,6 +23,11 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
 
+		<!-- MORRIS JS-->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
 </head>
 <body>
 	
@@ -50,10 +55,22 @@
 	<input type="date" class="fecha" name="fecha_1">
 	<input type="date" class="fecha" name="fecha_2"><br><br><br>
 	<input type="submit" value="graficar" class="btn btn-success">
+	<div class="donut">
+	<div id="donut-example" style="height: 250px; position: static;"></div>
+	<div>
+		<h1>Aquí va la de localidad</h1>
+	</div>
+	 <div id="bar-example"></div>
+
+</div>
 </section>
+
+
+
 
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
+
 
 $(function(){
 
@@ -100,7 +117,102 @@ $(document).ready(main);
 </script>
 
 
+  <!--           Graficas -->
+
+<?php
+
+	include 'php/mysql.php';
+
+
+	/*			GRÁFICA DE GÉNERO     */
+
+	
+    $query = "SELECT genero as 'total_hombres', COUNT(*) as 'total' FROM alumno GROUP BY genero HAVING genero='masculino'";
+   
+	$num_mujeres;
+	$num_hombres;
+
+	$result = $mysql_con->query($query);
+                    //POR CADA CUENTA IMPRIMIR UNA FILA EN LA TABLA:
+                   $x = 1;
+
+                    while( $fila = $result->fetch_assoc() ){
+                    	echo "<h1>".$fila['total']."</h1>";
+                        $x = $x+1;
+                        $num_hombres = $fila['total'];
+                    }
+
+    $query = "SELECT genero as 'total_mujeres', COUNT(*) as 'total' FROM alumno GROUP BY genero HAVING genero='femenino'";
+   
+	$num_mujeres = 1;
+	$num_hombres;
+
+	$result = $mysql_con->query($query);
+                    //POR CADA CUENTA IMPRIMIR UNA FILA EN LA TABLA:
+                   $x = 1;
+
+                    while( $fila = $result->fetch_assoc() ){
+                    	echo "<h1>".$fila['total']."</h1>";
+                        $x = $x+1;
+                        $num_mujeres = $fila['total'];
+                    }                 
+
+                    
+
+echo '
+
   
+	
+
+  <script type="text/javascript">
+  	
+  Morris.Donut({
+  element: "donut-example",
+  data: [
+    {label: "Mujeres", value: '.$num_mujeres.'},
+    {label: "Hombres", value: '.$num_hombres.'},
+     ]
+});
+
+  </script>
+';
+
+
+/*			GRÁFICA DE LOCALIDAD     */
+
+//SELECT localidad as 'localidad', COUNT(*) as 'total' FROM alumno GROUP BY localidad
+
+
+
+ 
+/*    GRÁFICA DE BARRAS     */
+echo '
+
+<script type="text/javascript">
+Morris.Bar({
+  element: "bar-example",
+  data: [
+    { y: "2006", a: 100, b: 90 },
+    { y: "2007", a: 75,  b: 65 },
+    { y: "2008", a: 50,  b: 40 },
+    { y: "2009", a: 75,  b: 65 },
+    { y: "2010", a: 50,  b: 40 },
+    { y: "2011", a: 75,  b: 65 },
+    { y: "2012", a: 100, b: 90 }
+  ],
+  xkey: "y",
+  ykeys: ["a", "b"],
+  labels: ["Series A", "Series B"]
+});
+
+
+</script>
+';
+
+$mysql_con->close();
+?>
+
+
 </body>
 </html>
 

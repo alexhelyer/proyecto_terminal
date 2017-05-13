@@ -23,6 +23,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
 
+	<!-- MORRIS JS-->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    
+
 </head>
 <body>
 	
@@ -46,7 +52,9 @@
 <section class="main_section">
 
 	<h1 class="main_titulo">Ver Reactivo</h1>
-
+	<br><br>
+	<h3>Reactivos Verdadero Falso</h3>
+	<br><br>
 	<table style="width:100%">
 	  <tr>
 	    <th>Reactivo</th>
@@ -80,6 +88,97 @@
                         $x = $x+1;
 
                     }
+
+                    //Cerramos la base de datos.
+                    $mysql_con->close();
+                ?>
+
+
+
+	</table>
+	<br><br>
+	<h3>Reactivos Opción Múltiple</h3>
+	<br><br>
+
+		<table style="width:100%">
+	  <tr>
+	    <th>Reactivo</th>
+	    <th>Respuesta</th> 
+	    <th>Grado</th>
+	    <th>Tema</th>
+	    <th>Subtema</th>
+	    <th>Nivel</th> 
+	    <th>Fecha</th>   
+	  </tr>
+
+                <?php
+                    //CONSULTA DE TODAS LAS CUENTAS EXISTENTES:
+                    include 'php/mysql.php';
+                    $query = "SELECT * FROM reactivo_multiple;";
+                    $result = $mysql_con->query($query);
+                    //POR CADA CUENTA IMPRIMIR UNA FILA EN LA TABLA:
+                    $x = 1;
+
+                    while( $fila = $result->fetch_assoc() ){
+
+                        echo '<tr>';
+                        echo "<td>".$fila['reactivo']."</td>";
+			            echo "<td>".$fila['respuesta']."</td>";
+			            echo "<td>".$fila['grado']."</td>";
+                        echo "<td>".$fila['tema']."</td> "; 
+                        echo "<td>".$fila['subtema']."</td> ";
+                        echo "<td>".$fila['nivel']."</td>";
+                        echo "<td>".$fila['fecha']."</td>";
+                        echo '</tr>';
+                        $x = $x+1;
+
+                    }
+
+
+                    //Cerramos la base de datos.
+                    $mysql_con->close();
+                ?>
+
+
+
+	</table>
+	<br><br>
+	<h3>Reactivos Opción Abierta</h3>
+	<br><br>
+<table style="width:100%">
+	  <tr>
+	    <th>Reactivo</th>
+	    <th>Respuesta</th> 
+	    <th>Grado</th>
+	    <th>Tema</th>
+	    <th>Subtema</th>
+	    <th>Nivel</th> 
+	    <th>Fecha</th>
+		  </tr>
+
+                <?php
+                    //CONSULTA DE TODAS LAS CUENTAS EXISTENTES:
+                    include 'php/mysql.php';                    
+                    $query = "SELECT * FROM reactivo_abierto;";
+                    $result = $mysql_con->query($query);
+                    //POR CADA CUENTA IMPRIMIR UNA FILA EN LA TABLA:
+                    $x = 1;
+
+                    while( $fila = $result->fetch_assoc() ){
+
+                        echo '<tr>';
+                        echo "<td>".$fila['reactivo']."</td>";
+			            echo "<td>".$fila['respuesta']."</td>";
+			            echo "<td>".$fila['grado']."</td>";
+                        echo "<td>".$fila['tema']."</td> "; 
+                        echo "<td>".$fila['subtema']."</td> ";
+                        echo "<td>".$fila['nivel']."</td>";
+                        echo "<td>".$fila['fecha']."</td>";
+                        echo '</tr>';
+                        $x = $x+1;
+
+                    }
+
                     //Cerramos la base de datos.
                     $mysql_con->close();
                 ?>

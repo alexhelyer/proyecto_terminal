@@ -13,6 +13,12 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+
 
 </head>
 <body>
@@ -60,7 +66,7 @@
 <form action="php/subir_reactivo.php" method="post" id="form_1" class="form_type">
 		
 		<label>Seleccione el tema1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'slct2')">
+		<select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'subtema')">
 		  <option value="aritmetica">Aritmética</option>
 		  <option value="algebra">Álgebra</option>
 		  <option value="geometria">Geometría</option>
@@ -78,7 +84,7 @@
 		</select><br><br>
 	
 		<label>Seleccione el grado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<select class="selectpicker" data-style="btn-primary" id="slct1" name="grado" onchange="populate(this.id,'slct2')">
+		<select class="selectpicker" data-style="btn-primary" id="slct1" name="grado" >
 		  <option value="1">Primer Grado</option>
 		  <option value="2">Segundo Grado</option>
 		  <option value="3">Tercer Grado</option>
@@ -86,7 +92,7 @@
 
 		
 		<label>Seleccione el Nivel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<select class="selectpicker" data-style="btn-info" id="slct1" name="nivel" onchange="populate(this.id,'slct2')">
+		<select class="selectpicker" data-style="btn-info" id="slct1" name="nivel" >
 		  <option value="1"> Nivel I</option>
 		  <option value="2"> Nivel II</option>
 		  <option value="3"> Nivel III</option>
@@ -111,10 +117,10 @@
 <form action="php/subir_reactivo.php" method="post" id="form_2" class="form_type">
 		
 		<label>Seleccione el tema1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'slct2')">
+		<select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'subtema')">
 		  <option value="aritmetica">Aritmética</option>
 		  <option value="algebra">Álgebra</option>
-		  <option value="geometria">Geometría</option>
+		  <option value="geometria">Geometría</optison>
 		  <option value="trigonometria">Trigonometría</option>
 		  <option value="probabilidad">Probabilidad</option>
 		</select>
@@ -164,7 +170,7 @@
 <form action="php/subir_reactivo.php" method="post" id="form_3" class="form_type">
 		
 		<label>Seleccione el tema1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'slct2')">
+		<select class="selectpicker" data-style="btn-primary" id="slct1" name="tema" onchange="populate(this.id,'subtema')">
 		  <option value="aritmetica">Aritmética</option>
 		  <option value="algebra">Álgebra</option>
 		  <option value="geometria">Geometría</option>
