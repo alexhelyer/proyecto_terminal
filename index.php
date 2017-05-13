@@ -32,7 +32,7 @@
 	</header> -->
 	<section class="cuerpo">
 		<center>
-		<h1>Televisión Educativa</h1>
+	<!--	<h1>Televisión Educativa</h1> -->
 		<h2>Inicio de Sesión</h2>
 		<form action="php/login.php" method="post">
 			
