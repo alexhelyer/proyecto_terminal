@@ -10,97 +10,40 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html >
 <head>
-	<meta charset="UTF-8">
-	<title>Login</title>
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/iconos.css">
-	<link rel="icon" href="images/favicon.ico" sizes="16x16">
-	<script src="js/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Flat Login Form</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Montserrat:400,700'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
 </head>
+
 <body>
-<!--	<header class="cabecera">
+  
+<div class="container">
+  <div class="info">
+    <h1>Inicio de Sesión</h1>
+  </div>
+</div>
+<div class="form">
+  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
+   <form class="login-form" action="php/login.php" method="post">
+    <input type="text" placeholder="username" name="username" />
+    <input type="password" placeholder="password" name="password"/>
+    <button>login</button>
+  </form>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-		<img src="images/gobmxlogo.svg" width=75 height=23 >
-		<nav id="menu">
-            <ul>
-                <li><a href="reporte.php">Crear Reporte</a></li>
-            </ul>
-        </nav>
+    <script src="js/index.js"></script>
 
-	</header> -->
-	<section class="cuerpo">
-		<center>
-	<!--	<h1>Televisión Educativa</h1> -->
-		<h2>Inicio de Sesión</h2>
-		<form action="php/login.php" method="post">
-			
-			<div>
-				<label>Nombre:</label>
-				<br>
-				<div class="log-text">
-					<span class="icon-user" >   </span>
-					<input class="form-input" type="text" name="username" placeholder="Usuario" required>
-				</div>
-
-				<br><br>
-				<label>Usuario:</label>
-				<br>
-
-				<div class="log-text">
-					<span class="icon-key" >   </span>
-					<input class="form-input" type="password" name="password" placeholder="******" required>
-				</div>
-				<br>
-				<p class="err" style="color: #FF0000; display: none;"></p>
-				<br>
-				<input class="button-sesion" type="submit" value="Iniciar Sesion">
-
-				<script>
-				$(function(){
-					$(".err").show();
-				});
-				</script>
-
-			</div>
-
-        	<?php
-		        if(isset($_GET['err'])){
-		          $err = $_GET['err'];
-
-		          if(strcmp($err,'0')==0)
-		              echo  '<script>$(function(){$(".err").text("Usuario INCORRECTO");});</script>';
-		          else if (strcmp($err,'1')==0)
-		              echo '<script>$(function(){$(".err").text("Password INCORRECTO");});</script>';
-		          else if (strcmp($err,'2')==0)
-		              echo '<script>$(function(){$(".err").text("Ya se ha iniciado sesion en otra parte");});</script>';
-
-		        }
-    		?> 
-			
-		</form>
-		</center>
-	</section>
-	<footer class="banner">
-		<img src="images/gobmxlogo.svg" width=126>
-	</footer>
-	<style type="text/css">
-
-	.log-text {
-		display: inline-flex;
-	}
-
-	.icon-user:before {
-		font-size: 28px;
-	}
-
-	.icon-key:before {
-		font-size: 28px;
-	}
-
-
-	</style>
 </body>
-
 </html>

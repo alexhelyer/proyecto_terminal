@@ -51,7 +51,7 @@
 	<br><br>
 	<h3>Reactivos Verdadero Falso</h3>
 	<br><br>
-	<table style="width:100%">
+	<table style="width:100%" class="table table-striped">
 	  <tr>
 	    <th>Reactivo</th>
 	    <th>Respuesta</th> 
@@ -96,7 +96,7 @@
 	<h3>Reactivos Opción Múltiple</h3>
 	<br><br>
 
-		<table style="width:100%">
+		<table style="width:100%" class="table table-striped">
 	  <tr>
 	    <th>Reactivo</th>
 	    <th>Respuesta</th> 
@@ -141,7 +141,7 @@
 	<br><br>
 	<h3>Reactivos Opción Abierta</h3>
 	<br><br>
-<table style="width:100%">
+<table style="width:100%" class="table table-striped">
 	  <tr>
 	    <th>Reactivo</th>
 	    <th>Respuesta</th> 
